@@ -1,0 +1,54 @@
+<html>
+<link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+<head>
+</head>
+
+<body class = "body">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/graph">Graph <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+      </div>
+    </nav>
+
+
+
+   <body>
+       <h3> {{ title }} </h3>
+       {% for p in paragraph %}
+       <p> {{ p }} </p>
+       {% endfor %}
+
+       {% if pageType == 'about' %}
+       <p> Contact box thing is here </p>
+       {% endif %}
+
+
+       {% block body %}
+       <img src="{{url_for('static', filename= 'pres.png')}}" />
+       {% endblock %}
+
+   </body>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap.min.js"></script>
+
+
+
+</html>
+
